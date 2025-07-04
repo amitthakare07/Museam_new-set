@@ -1,0 +1,119 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+  background-color: #fff;
+}
+
+.amit {
+  width: 100%;
+}
+
+/* Header */
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+
+.header-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.boutique-button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.ticket-button {
+  background-color: #00b383;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  display: flex;
+  gap: 2rem;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.info-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #111;
+  color: #fff;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1rem;
+  border-top-left-radius: 10px;
+}
+
+.hours {
+  margin: 0;
+  font-weight: bold;
+}
+
+.book-button {
+  background-color: #00b383;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+}
+
+.visit-button {
+  background-color: #fff;
+  color: #111;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+}
