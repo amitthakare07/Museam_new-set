@@ -36,7 +36,7 @@ export default function Home() {
           className="hero-image"
         />
         <h2 className="hero-text">
-          ESCAPE WITH THE <br /> LOUVRE
+          ESCAPE WITH THE <br /> LOUVRE Amit
         </h2>
         <div className="info-box">
           <div>
