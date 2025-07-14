@@ -1,34 +1,30 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+// src/components/Navbar.js
+import React from "react";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 
-export default function Navbar() {
-    return (
-        <>
-            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-                        </ul>
-                        </div>
-                        
-                    </div>
-                <div>
-                        <title className='title'>LOUVER</title>
-                        </div>
-            </nav>
-        </>
-    )
+function CustomNavbar() {
+  return (
+    <Navbar bg="dark" expand="lg" variant="dark">
+      <Container>
+        <Navbar.Brand href="/">Louvre</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="me-auto">
+            <Nav.Link href="/a">Explore</Nav.Link>
+            <Nav.Link href="/aa">contact</Nav.Link>
+            <Nav.Link href="/aaa">booking</Nav.Link>
+          </Nav>
+          <div className="d-flex gap-2">
+            <Button variant="outline-light">Online Boutique</Button>
+            <Button variant="success">🎟️ Tickets</Button>
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
+
+export default CustomNavbar;
+
+
+
