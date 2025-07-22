@@ -1,39 +1,146 @@
-.calendar-container {
-  max-width: 600px;
-  margin: auto;
+z/* Calendar Container */
+.custom-calendar-container {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
+/* Navigation buttons and header */
+.custom-calendar-nav h5 {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-.calendar-day {
+.custom-calendar-nav button {
   width: 40px;
   height: 40px;
-  line-height: 40px;
+  font-size: 20px;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.custom-calendar-nav button:hover {
+  background-color: #e2e2e2;
+}
+
+/* Weekdays */
+.custom-calendar-weekdays div {
+  width: 40px;
   text-align: center;
-  border-radius: 50%;
+  font-weight: 600;
+}
+
+/* Days Grid */
+.custom-calendar-grid {
+  gap: 8px;
+}
+
+.custom-calendar-day {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 8px;
+  background-color: #f1f1f1;
   cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
 }
 
-.calendar-day.disabled {
-  color: #ccc;
-  text-decoration: line-through;
-  pointer-events: none;
+/* Hover effect */
+.custom-calendar-day:hover {
+  background-color: #ddd;
 }
 
-.calendar-day.last-available {
-  border: 2px solid tomato;
-  position: relative;
+/* Disabled dates */
+.custom-calendar-day.disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Last available slots */
+.custom-calendar-day.last-available {
+  border: 2px solid #28a745;
+  color: #28a745;
+}
+
+/* Selected date */
+.custom-calendar-day.selected {
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Empty placeholders */
+.custom-calendar-day.empty {
+  visibility: hidden;
+}
+
+/* Dot Legend */
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .legend .dot {
   height: 10px;
   width: 10px;
-  background-color: tomato;
+  background-color: #28a745;
   border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
+  margin-right: 8px;
+}
+
+/* Booking form container */
+.custom-booking input,
+.custom-booking select {
+  border-radius: 0.5rem;
+}
+
+.custom-booking h4 {
+  font-weight: 600;
+}
+
+.custom-booking form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.custom-booking button[type="submit"] {
+  font-weight: 600;
+}
+.textp{
+  color: #28a745;
+}
+.country-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.flag-option {
+  background-color: #f8f9fa;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.flag-option img {
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.flag-option:hover {
+  background-color: #e2f0ff;
+  transform: translateY(-3px);
 }
