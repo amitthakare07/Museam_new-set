@@ -64,10 +64,7 @@ function Gallery(){
           <p className="card-text">ARTS OF THE BOOK</p>
           <img src={books} alt="books" />
         </div>
-        <div className="card-item">
-          <p className="card-text">JEWELLERY & FINERY</p>
-          <img src={arms} alt="arms" />
-        </div>
+        
       </div>
         <br/><br/>
 
@@ -84,10 +81,7 @@ function Gallery(){
           <p className="card-text">WRITING & INSCRIPTION</p>
           <img src={furniture} alt="furniture" />
         </div>
-        <div className="card-item">
-          <p className="card-text">COINS & MEDALS</p>
-          <img src={coin} alt="coin" />
-        </div>
+       
       </div>
       <br/><br/>
 
@@ -105,10 +99,7 @@ function Gallery(){
           <p className="card-text">DOMESTIC ITEMS</p>
           <img src={items} alt="items" />
         </div>
-        <div className="card-item">
-          <p className="card-text">PERSONAL ITEMS</p>
-          <img src={pers} alt="pers" />
-        </div>
+        
     </div><br/><br/>
     <div className="card">
         <div className="card-item">
@@ -123,10 +114,7 @@ function Gallery(){
           <p className="card-text">SEALS & GLYPTIC ART</p>
           <img src={seal}alt="seals"/>
         </div>
-        <div className="card-item">
-          <p className="card-text">VESSELS AND DISHES</p>
-          <img src={pots} />
-        </div>
+        
     </div>
 
     <br/><br/><br/>

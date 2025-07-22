@@ -16,6 +16,8 @@ import './BluePrint.css';
 import SubmitRequest from './SubmitRequest';
 import Clickable from './Clickable';
 import LouvreBooking from './LouvreBooking'
+import Login from './Login';
+import './footer.css';
 
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
         <Route path="/submitrequest" element={<SubmitRequest />} />
         <Route path="/Clickable" element={<Clickable />} />
         <Route path="/aaa" element={<LouvreBooking/>} />
+        <Route path="/aaaa" element={<Login/>} />
       </Routes>
       <Footer/>
     </Router>

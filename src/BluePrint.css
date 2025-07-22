@@ -233,7 +233,7 @@ body {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (width:100) {
   .contact-grid {
     grid-template-columns: 1fr;
   }

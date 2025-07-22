@@ -1,12 +1,13 @@
 .footer {
-  background-color: #0c0c0c;
-  color: #ccc;
+  background-color: #000000;
+  color: #ffffff;
   border-top: 2px solid #222;
   font-family: 'Georgia', serif;
+  padding: 40px 0;
 }
 
 .footer-logo {
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
   font-size: 1.6rem;
   letter-spacing: 1px;
@@ -15,10 +16,11 @@
 .footer-text {
   margin: 4px 0;
   font-size: 0.95rem;
+  color: #dddddd;
 }
 
 .footer-text a {
-  color: #ccc;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -28,17 +30,18 @@
 
 .footer-copy {
   font-size: 0.8rem;
-  color: #888;
+  color: #aaaaaa;
 }
 
 .footer-connect {
-  color: #ddd;
+  color: #ffffff;
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
 
 .footer-social a {
   font-size: 1.6rem;
+  color: #ffffff;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 

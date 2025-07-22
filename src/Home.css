@@ -1,4 +1,13 @@
-/* src/Home.css */
+@import url("https://fonts.googleapis.com/css2?family=Georgia&display=swap");
+@import url("https://use.fontawesome.com/releases/v6.5.1/css/all.css");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
+  color: #111;
+}
 
 /* Hero Section */
 .hero {
@@ -8,7 +17,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
 }
 
@@ -24,6 +32,7 @@
 
 .hero-content {
   z-index: 2;
+  padding: 20px;
 }
 
 .hero h1 {
@@ -32,102 +41,172 @@
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-.hero-info {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px 30px;
-  border-radius: 12px;
-  margin-top: 20px;
-}
-
 .open-time {
   color: orange;
   font-weight: bold;
   font-size: 1.1rem;
 }
 
-.hero-actions {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Highlights */
-.section-title {
+/* Section Title */
+.louvre-section-title {
+  font-size: 3rem;
   font-family: 'Georgia', serif;
-  font-size: 2.5rem;
-  text-align: center;
   color: #111;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
 }
 
-.highlight-card {
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Highlights Grid */
+.louvre-highlights {
+  padding: 50px 30px;
 }
 
-.highlight-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+.louvre-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
-.card-img-top {
-  height: 250px;
+.louvre-col {
+  flex: 0 0 31%;
+  display: flex;
+}
+
+@media (max-width: 992px) {
+  .louvre-col {
+    flex: 0 0 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .louvre-col {
+    flex: 0 0 100%;
+  }
+}
+
+/* Highlight Card */
+.louvre-highlight-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.louvre-highlight-card:hover {
+  transform: perspective(800px) rotateY(2deg) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Image */
+.louvre-highlight-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-img {
+  width: 100%;
+  height: 240px;
   object-fit: cover;
-}
-/* Footer Styling */
-.footer {
-  background-color: #0c0c0c;
-  color: #ccc;
-  border-top: 2px solid #222;
-  font-family: 'Georgia', serif;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: transform 0.4s ease;
 }
 
-.footer-logo {
+.louvre-highlight-img-wrapper:hover .highlight-img {
+  transform: scale(1.05);
+}
+
+/* Tag Badge */
+.louvre-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f9d423, #ff4e50);
   color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* Card Body */
+.louvre-card-body {
+  padding: 20px;
+  background: #fff;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.louvre-card-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
   font-weight: bold;
-  font-size: 1.6rem;
-  letter-spacing: 1px;
+  color: #222;
+  margin-bottom: 10px;
 }
 
-.footer-text {
-  margin: 4px 0;
+.louvre-card-text {
   font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 8px;
 }
 
-.footer-text a {
-  color: #ccc;
-  text-decoration: none;
+.louvre-card-date {
+  font-size: 0.85rem;
+  color: #777;
 }
 
-.footer-text a:hover {
-  color: #f5c518;
+/* Explore More Button */
+.explore-button-container {
+  text-align: center;
+  margin-top: 40px;
 }
 
-.footer-copy {
-  font-size: 0.8rem;
-  color: #888;
+.explore-button {
+  padding: 14px 32px;
+  background: linear-gradient(to right, #194abd, #000814);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.footer-connect {
-  color: #ddd;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
+.explore-button:hover {
+  background: linear-gradient(to right, #000814, #194abd);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.footer-social a {
-  font-size: 1.6rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
 
-.footer-icon:hover {
-  transform: scale(1.2);
-}
+  .louvre-section-title {
+    font-size: 2.3rem;
+  }
 
-.footer-icon.whatsapp:hover {
-  color: #25D366;
-}
+  .louvre-card-body {
+    padding: 16px;
+  }
 
-.footer-icon.instagram:hover {
-  color: #E1306C;
+  .highlight-img {
+    height: 200px;
+  }
 }

@@ -13,6 +13,7 @@ function CustomNavbar() {
             <Nav.Link href="/a">Explore</Nav.Link>
             <Nav.Link href="/aa">contact</Nav.Link>
             <Nav.Link href="/aaa">booking</Nav.Link>
+             <Nav.Link href="/aaaa">Login</Nav.Link>
           </Nav>
           <div className="d-flex gap-2">
             <Button variant="outline-light">Online Boutique</Button>
