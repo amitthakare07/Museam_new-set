@@ -18,6 +18,7 @@ import Clickable from './Clickable';
 import LouvreBooking from './LouvreBooking'
 import Login from './Login';
 import './footer.css';
+import Membership from './Membership';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/Clickable" element={<Clickable />} />
         <Route path="/aaa" element={<LouvreBooking/>} />
         <Route path="/aaaa" element={<Login/>} />
+         <Route path="/aaaaa" element={<Membership/>} />
       </Routes>
       <Footer/>
     </Router>

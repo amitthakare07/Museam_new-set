@@ -1,12 +1,12 @@
 /* Hero Section */
-.hero-container {
+.gallery-hero-container {
   position: relative;
   height: 100vh;
   width: 100%;
   overflow: hidden;
 }
 
-.background-image {
+.gallery-background-image {
   width: 100%;
   height: 90%;
   object-fit: cover;
@@ -16,262 +16,164 @@
   z-index: -1;
 }
 
-.search-bar-container {
+.gallery-search-bar {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.search-input {
+.gallery-search-input {
   padding: 12px 24px;
   font-size: 18px;
   border-radius: 30px;
   border: none;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  outline: none;
 }
 
-/* Description Section */
-.para {
-  padding: 0 70px;
-  margin: 30px;
+/* Description Paragraph */
+.gallery-description {
+  padding: 30px 60px;
   text-align: center;
   font-size: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia, serif;
+  color: #222;
 }
 
-/* 3x3 Card Grid Layout (Gallery) */
-.card {
+.gallery-description a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0077cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.gallery-description a:hover {
+  text-decoration: underline;
+}
+
+/* Collection Cards */
+.gallery-collection {
+  background-color: #004d4d;
+  padding: 60px 20px;
+}
+
+.gallery-collection-title {
+  font-size: 40px;
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 40px;
+}
+
+.gallery-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* changed from 3 to 4 */
   gap: 30px;
   justify-items: center;
   padding: 0 20px;
 }
 
-.card-item {
+.gallery-card {
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-.card-item img {
+.gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  border-radius: 12px;
   transition: transform 0.3s ease;
-  border-radius: 10px;
 }
 
-.card-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.gallery-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-.card-item:hover img {
-  transform: scale(1.1);
+.gallery-card:hover img {
+  transform: scale(1.08);
 }
 
-.card-text {
+.gallery-card-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
-  text-shadow: 2px 2px 4px black;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black;
   z-index: 2;
   pointer-events: none;
 }
 
-/* Themed Albums Section (3x3 Layout) */
-.cards {
+/* Themed Albums Section */
+.gallery-album-heading {
+  font-size: 38px;
+  text-align: center;
+  margin: 80px 0 40px;
+  color: #222;
+}
+
+.gallery-album-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr); /* ensures 2 per row */
+  gap: 40px;
   padding: 0 20px;
   justify-items: center;
 }
 
-.card-items {
+
+.gallery-album-card {
   position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 600px;
   height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-.card-items img {
+.gallery-album-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  border-radius: 12px;
   transition: transform 0.3s ease;
-  border-radius: 10px;
 }
 
-.card-items:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+.gallery-album-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 
-.card-items:hover img {
-  transform: scale(1.1);
+.gallery-album-card:hover img {
+  transform: scale(1.08);
 }
 
-.card-textx {
+.gallery-album-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 25px;
+  color: #fff;
+  font-size: 24px;
   text-align: center;
   text-shadow: 2px 2px 4px black;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Responsive Layout */
-@media (max-width: 992px) {
-  .card,
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card,
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Misc Styling */
-.images {
-  width: 70%;
-  text-align: center;
-}
-
-.two {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 30px;
-  padding: 100px;
-}
-
-.about-container {
-  background-color: #1f618d;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.about-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #f6c935;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.about-title h2 {
-  font-size: 30px;
   font-weight: 600;
-  margin: 0;
-  letter-spacing: 1px;
-  white-space: nowrap;
-}
-
-.line {
-  flex: 1;
-  height: 2px;
-  background-color: #d4af37;
-  max-width: 200px;
-}
-
-.paragraph,
-.para1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #555;
-  border-left: 5px solid #ccc;
-  padding: 0 360px;
-  margin: 20px 0;
-}
-
-/* Girlspage */
-.hero-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.background-img {
-  width: 100%;
-  height: 80vh;
-  object-fit: cover;
-}
-
-.overlay-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.overlay-content h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  letter-spacing: 1px;
-}
-
-.art-count {
-  margin-top: 20px;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 10px;
-  font-size: 0.9rem;
-}
-
-.themed {
-  text-align: left;
-  flex: 1;
-}
-
-.icons {
-  text-align: right;
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  gap: 15px;
+  z-index: 2;
 }

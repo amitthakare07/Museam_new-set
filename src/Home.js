@@ -2,7 +2,6 @@ import React from 'react';
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function Home() {
   const highlights = [
     {
@@ -33,20 +32,20 @@ function Home() {
       description: "Near Eastern Antiquities in Dialogue.",
       date: "29 Feb – 28 Sep 2025"
     },
-     {
-    title: "WOMEN IN RENAISSANCE ART",
-    image: "/dd287e2fd247a075b1cb6a5f96c49efe--italian-renaissance-art-renaissance-artists.jpg",
-    tag: "Art & Gender",
-    description: "Exploring the roles and representations of women in Renaissance paintings.",
-    date: "12 Mar – 30 Sep 2025"
-  },
-  {
-    title: "MAYA: SACRED COSMOS",
-    image: "/mayan.mythologyworldwide.com-The-Popol-Vuh-The-Mayas-Epic-Tale-of-Life-and-the-Cosmos.webp",
-    tag: "Ancient Civilizations",
-    description: "Rituals, astronomy, and mythology in Maya culture and artifacts.",
-    date: "5 Apr – 20 Oct 2025"
-  }
+    {
+      title: "WOMEN IN RENAISSANCE ART",
+      image: "/dd287e2fd247a075b1cb6a5f96c49efe--italian-renaissance-art-renaissance-artists.jpg",
+      tag: "Art & Gender",
+      description: "Exploring the roles and representations of women in Renaissance paintings.",
+      date: "12 Mar – 30 Sep 2025"
+    },
+    {
+      title: "MAYA: SACRED COSMOS",
+      image: "/mayan.mythologyworldwide.com-The-Popol-Vuh-The-Mayas-Epic-Tale-of-Life-and-the-Cosmos.webp",
+      tag: "Ancient Civilizations",
+      description: "Rituals, astronomy, and mythology in Maya culture and artifacts.",
+      date: "5 Apr – 20 Oct 2025"
+    }
   ];
 
   return (
@@ -62,7 +61,7 @@ function Home() {
             <p className="mb-1"><strong>Welcome to the Louvre</strong><br />Open today</p>
             <p className="open-time text-warning fw-semibold">9:00 AM → 6:00 PM</p>
             <div className="d-flex justify-content-center gap-3 flex-wrap mt-3">
-              <button className="btn btn-success" >🎫 Book a ticket</button>
+              <button className="btn-glow">🎫 Book a ticket</button>
               <button className="btn btn-light">ℹ️ Prepare your visit</button>
             </div>
           </div>
@@ -75,15 +74,34 @@ function Home() {
         <div className="row g-4">
           {highlights.map((item, index) => (
             <div key={index} className="col-md-6 col-lg-4">
-              <div className="louvre-highlight-card">
-                <div className="louvre-highlight-img-wrapper">
-                  <img src={item.image} alt={item.title} className="highlight-img" />
-                  <span className="louvre-tag">{item.tag}</span>
-                </div>
-                <div className="louvre-card-body">
-                  <h5 className="louvre-card-title">{item.title}</h5>
-                  <p className="louvre-card-text">{item.description}</p>
-                  <p className="louvre-card-date">{item.date}</p>
+              <div
+                className="louvre-highlight-card"
+                onMouseMove={(e) => {
+                  const card = e.currentTarget.querySelector(".louvre-highlight-inner");
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  const centerX = rect.width / 2;
+                  const centerY = rect.height / 2;
+                  const rotateX = -(y - centerY) / 20;
+                  const rotateY = (x - centerX) / 20;
+                  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                }}
+                onMouseLeave={(e) => {
+                  const card = e.currentTarget.querySelector(".louvre-highlight-inner");
+                  card.style.transform = "rotateX(0deg) rotateY(0deg)";
+                }}
+              >
+                <div className="louvre-highlight-inner">
+                  <div className="louvre-highlight-img-wrapper">
+                    <img src={item.image} alt={item.title} className="highlight-img" />
+                    <span className="louvre-tag">{item.tag}</span>
+                  </div>
+                  <div className="louvre-card-body">
+                    <h5 className="louvre-card-title">{item.title}</h5>
+                    <p className="louvre-card-text">{item.description}</p>
+                    <p className="louvre-card-date">{item.date}</p>
+                  </div>
                 </div>
               </div>
             </div>
