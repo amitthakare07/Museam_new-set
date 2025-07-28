@@ -19,6 +19,10 @@ import LouvreBooking from './LouvreBooking'
 import Login from './Login';
 import './footer.css';
 import Membership from './Membership';
+import Info from './Info';
+import OnlineTicketingService from './OnlineTicketingService';
+import Group from './Group';
+
 
 function App() {
   return (
@@ -38,7 +42,11 @@ function App() {
         <Route path="/Clickable" element={<Clickable />} />
         <Route path="/aaa" element={<LouvreBooking/>} />
         <Route path="/aaaa" element={<Login/>} />
-         <Route path="/aaaaa" element={<Membership/>} />
+        <Route path="/aaaaa" element={<Membership/>} />
+        <Route path="/Info" element={<Info/>} />
+        <Route path="/OnlineTicketingService" element={< OnlineTicketingService/>} />
+        <Route path="/Group" element={< Group/>} />
+
       </Routes>
       <Footer/>
     </Router>

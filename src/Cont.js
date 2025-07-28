@@ -8,12 +8,12 @@ function Cont() {
   return (
     <>
 
-    <div className="hero-container">
+    <div className="hero" >
       <img src={muse}
         alt="Background"
         className="background"
       />
-      <div className="search-bar-container">
+      <div className="search-bar-container" >
         <input type="text" placeholder="Search..." className="search-input" />
       </div>
     </div>
@@ -22,16 +22,17 @@ function Cont() {
       <section className="themes-section">
         <h2 className="section-title red">THEMES</h2>
         <div className="button-group">
-          <button>General information</button>
-          <button>Online ticketing service</button>
-          <button>Group reservations and information</button>
+          <Link to="/Info"><Button variant="primary">General information</Button></Link>
+           <Link to="/OnlineTicketingService"><Button variant="primary">Online ticketing service</Button></Link>
+           <Link to="/Group"><Button variant="primary">Group reservations and information</Button></Link>
+        
         </div>
       </section>
 
       <section className="faq-section">
         <h2 className="section-title blue">FREQUENTLY ASKED QUESTIONS </h2>
         <div className="faq-grid">
-         <div> Is the reservation mandatory? Can I buy tickets at the ticket offices on the same day?<hr/></div>
+         <div> Is the reservation mandatory? Can I buy tickets at the ticket offices on the day?<hr/></div>
           <div>Does the museum offer a cloakroom? And what do I have to leave there?<hr/></div>
           <div>Will some rooms be closed on the day I have planned to visit?<hr/></div>
           <div>How do I buy a ticket online?<hr/></div>
