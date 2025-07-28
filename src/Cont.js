@@ -13,7 +13,7 @@ function Cont() {
         alt="Background"
         className="background"
       />
-      <div className="search-bar-container" >
+      <div className="search-bar-container fade-slide" >
         <input type="text" placeholder="Search..." className="search-input" />
       </div>
     </div>

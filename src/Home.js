@@ -55,8 +55,8 @@ function Home() {
         <video className="hero-video" autoPlay muted loop playsInline>
           <source src="/3205451-uhd_3840_2160_30fps.mp4" type="video/mp4" />
         </video>
-        <div className="hero-content text-white text-center">
-          <h1 className="display-4 fw-bold">Escape with the <br /> Louvre</h1>
+        <div className="hero-content text-white text-center fade-slide">
+          <h1 className="display-4 fw-bold">Escape with the <br /> time gallery</h1>
           <div className="info-box mt-4 p-4 bg-dark bg-opacity-75 rounded">
             <p className="mb-1"><strong>Welcome to the Louvre</strong><br />Open today</p>
             <p className="open-time text-warning fw-semibold">9:00 AM → 6:00 PM</p>

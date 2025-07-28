@@ -70,7 +70,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className="custom-calendar-container text-center">
+    <div className="custom-calendar-container text-center fade-slide">
       <div className="custom-calendar-nav d-flex justify-content-between align-items-center px-5">
         <button onClick={prevMonth} className="btn btn-light rounded-circle">&#8249;</button>
         <h5 className="m-0">{months[currentMonth]} {currentYear}</h5>

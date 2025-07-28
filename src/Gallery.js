@@ -24,18 +24,116 @@ import lions from './lion.jpg';
 import mans from './man.jpg';
 import mona from './monalisa.jpg';
 
+const collectionItems = [
+  {
+    title: "ARCHITECTURE & DECORATION",
+    image: log,
+    description: "Explore ornamental features, architectural styles, and design innovations that defined ancient civilizations and modern movements."
+  },
+  {
+    title: "ARMS & ARMOUR",
+    image: diamond,
+    description: "From swords to shields, discover the evolution of weaponry and protective gear used in battle and ceremony throughout history."
+  },
+  {
+    title: "ARTS OF THE BOOK",
+    image: books,
+    description: "Beautifully illustrated manuscripts, calligraphy, and bindings that showcase the written word as an art form."
+  },
+  {
+    title: "DRAWINGS & PRINTS",
+    image: draw,
+    description: "Rare sketches, etchings, and prints by master artists revealing their process, style, and imagination."
+  },
+  {
+    title: "FURNITURE",
+    image: write,
+    description: "Chairs, tables, and cabinets that combine utility and artistry across centuries of craftsmanship."
+  },
+  {
+    title: "WRITING & INSCRIPTION",
+    image: furniture,
+    description: "Ancient texts and engravings that preserve languages, cultures, and legacies from early civilizations."
+  },
+  {
+    title: "FUNERARY MONUMENTS",
+    image: monument,
+    description: "Tombs and memorial sculptures honoring the dead, reflecting cultural views on life, death, and remembrance."
+  },
+  {
+    title: "OBJECTS OF WORSHIP",
+    image: obj,
+    description: "Sacred items and religious artifacts used in rituals, prayer, and ceremonies across different faiths."
+  },
+  {
+    title: "DOMESTIC ITEMS",
+    image: items,
+    description: "Everyday objects that offer insights into home life, routine, and tradition in ancient and modern times."
+  },
+  {
+    title: "TOOLS & INSTRUMENTS",
+    image: tool,
+    description: "Manual and scientific instruments used in construction, medicine, music, and more."
+  },
+  {
+    title: "DRAWINGS",
+    image: painting,
+    description: "Detailed renderings in ink, pencil, and charcoal capturing moments, ideas, and beauty through lines and shades."
+  },
+  {
+    title: "SEALS & GLYPTIC ART",
+    image: seal,
+    description: "Engraved stones and seals used for decoration, authority, and identity throughout empires."
+  },
+  {
+    title: "COINS & MEDALS",
+    image: coin,
+    description: "Currency and commemorative medals that tell economic, political, and artistic stories of their time."
+  },
+  {
+    title: "PERSONAL OBJECTS",
+    image: pers,
+    description: "Jewelry, accessories, and tokens that reflect individual taste, status, and cultural identity."
+  },
+  {
+    title: "POTS & VESSELS",
+    image: pots,
+    description: "Ceramic and metal containers used for cooking, storage, and ceremonies, often adorned with decorative motifs."
+  },
+  {
+    title: "ARMOUR ACCESSORIES",
+    image: arms,
+    description: "Helmet crests, clasps, and decorative details that once complemented armor in battle and pageantry."
+  }
+];
+
+function GalleryCard({ title, image, description }) {
+  return (
+    <div className="flip-card">
+      <div className="flip-card-inner">
+        <div className="flip-card-front">
+          <img src={image} alt={title} />
+          <p className="gallery-card-text">{title}</p>
+        </div>
+        <div className="flip-card-back">
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Gallery() {
   return (
     <>
-      {/* Hero Section */}
-      <div className="gallery-hero-container">
+      <div className="gallery-hero-container fade-slide">
         <img src={mona} alt="Background" className="gallery-background-image" />
         <div className="gallery-search-bar">
           <input type="text" placeholder="Search The Louvre Collection" className="gallery-search-input" />
         </div>
       </div>
 
-      {/* Description */}
       <div className="gallery-description">
         <p>
           The Collections database consists of entries for more than 500,000 works in the Musée du Louvre and Musée National Eugène-Delacroix. Updated on a daily basis, it is the result of the continuous research and documentation efforts carried out by teams of experts from both museums.
@@ -43,37 +141,21 @@ function Gallery() {
         <Link to="/Music">See more</Link>
       </div>
 
-      {/* Explore Section */}
       <div className="gallery-collection">
         <p className="gallery-collection-title">Explore the Collection</p>
-
         <div className="gallery-card-grid">
-  <div className="gallery-card"><p className="gallery-card-text">ARCHITECTURE & DECORATION</p><img src={log} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">ARMS & ARMOUR</p><img src={diamond} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">ARTS OF THE BOOK</p><img src={books} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">DRAWINGS & PRINTS</p><img src={draw} alt="" /></div>
-
-  <div className="gallery-card"><p className="gallery-card-text">FURNITURE</p><img src={write} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">WRITING & INSCRIPTION</p><img src={furniture} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">FUNERARY MONUMENTS</p><img src={monument} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">OBJECTS OF WORSHIP</p><img src={obj} alt="" /></div>
-
-  <div className="gallery-card"><p className="gallery-card-text">DOMESTIC ITEMS</p><img src={items} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">TOOLS & INSTRUMENTS</p><img src={tool} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">DRAWINGS</p><img src={painting} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">SEALS & GLYPTIC ART</p><img src={seal} alt="" /></div>
-
-  <div className="gallery-card"><p className="gallery-card-text">COINS & MEDALS</p><img src={coin} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">PERSONAL OBJECTS</p><img src={pers} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">POTS & VESSELS</p><img src={pots} alt="" /></div>
-  <div className="gallery-card"><p className="gallery-card-text">ARMOUR ACCESSORIES</p><img src={arms} alt="" /></div>
-</div>
-
+          {collectionItems.map((item, index) => (
+            <GalleryCard
+              key={index}
+              title={item.title}
+              image={item.image}
+              description={item.description}
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Themed Albums */}
       <p className="gallery-album-heading">Themed Albums</p>
-
       <div className="gallery-album-grid">
         <div className="gallery-album-card">
           <p className="gallery-album-text">ACQUISITION MADE IN 2023<br /><hr />THE LATEST ADDITION</p>
