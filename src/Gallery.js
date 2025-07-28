@@ -79,7 +79,7 @@ function Gallery() {
           <p className="gallery-album-text">ACQUISITION MADE IN 2023<br /><hr />THE LATEST ADDITION</p>
           <Link to="/girlspage"><img src={girls} alt="2023" /></Link>
         </div>
-        <div className="gallery-album-card">
+        <div className="gallery-album-card">   
           <p className="gallery-album-text">ACQUISITION MADE IN 2022<br /><hr /></p>
           <Link to="/boyspage"><img src={boys} alt="2022" /></Link>
         </div>
