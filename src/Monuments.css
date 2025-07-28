@@ -8,7 +8,7 @@
 
 .gallery-background-image {
   width: 100%;
-  height: 90%;
+  height: 80%;
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .gallery-search-input {
@@ -30,8 +31,9 @@
   border: none;
   width: 320px;
   max-width: 90%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgb(26, 24, 24);
   outline: none;
+  background-color: white;
 }
 
 /* Description Paragraph */
@@ -176,4 +178,53 @@
   text-shadow: 2px 2px 4px black;
   font-weight: 600;
   z-index: 2;
+}
+
+/* see more */
+
+.mayuri {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fdfcfb;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', serif;
+  color: #333;
+  line-height: 1.8;
+}
+
+.mayuri h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2c2c2c;
+  border-left: 5px solid #9a8c98;
+  padding-left: 15px;
+  font-weight: 600;
+}
+
+.mayuri p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.mayuri strong {
+  color: #222;
+  font-weight: 700;
+}
+
+.mayuri em {
+  font-style: italic;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .mayuri {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .mayuri h2 {
+    font-size: 1.5rem;
+  }
 }

@@ -1,0 +1,196 @@
+/* --- Top Section Image --- */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* --- Description Section --- */
+
+
+/* --- Slider Section --- */
+.slider-section {
+  padding: 0 40px 60px;
+}
+
+/* --- Each Slide Container --- */
+.slider-padding {
+  padding: 10px;
+}
+
+/* --- Card Container --- */
+.slider-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Hover Effect --- */
+.slider-card:hover {
+  transform: translateY(-6px);
+}
+
+/* --- Image inside Card --- */
+.slider-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* or use contain if you want no crop */
+  display: block;
+}
+
+/* --- Card Content --- */
+.card-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* rucha */
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rucha p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+  color: #4a4847;
+  opacity: 0;
+  animation: fadeSlideUp 1.5s ease forwards;
+  animation-delay: 0.3s;
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 40px 50px;
+  background: #fdfcfb; /* very light ivory tone */
+  background: linear-gradient(135deg, #fdfcfb, #f7f6f3); /* soft elegant museum-style */
+  border-left: 5px solid #8c6f56; /* classic brown tone for elegance */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Georgia', serif;
+  text-align: center;
+  color: #3b3a39;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.rucha {
+  /* your existing styles... */
+  animation: fadeSlideUp 1.2s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap');
+
+@keyframes fadeInLetterByLetter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Center the whole block */
+.just {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #6d3aeb;
+  padding: 10px 10px;
+  background: linear-gradient(135deg, #fdfcfb, #f6f3ee);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 0px auto;
+  width: fit-content;
+  position: relative;
+  
+}
+
+/* Animation for each letter */
+.just span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInLetterByLetter 0.5s ease forwards;
+}
+
+/* Delay per letter */
+.just span:nth-child(1) { animation-delay: 0.1s; }
+.just span:nth-child(2) { animation-delay: 0.2s; }
+.just span:nth-child(3) { animation-delay: 0.3s; }
+.just span:nth-child(4) { animation-delay: 0.4s; }
+.just span:nth-child(5) { animation-delay: 0.5s; }
+.just span:nth-child(6) { animation-delay: 0.6s; }
+.just span:nth-child(7) { animation-delay: 0.8s; } /* space */
+.just span:nth-child(8) { animation-delay: 0.9s; }
+.just span:nth-child(9) { animation-delay: 1.0s; }
+.just span:nth-child(10) { animation-delay: 1.1s; }
+.just span:nth-child(11) { animation-delay: 1.2s; }
+.just span:nth-child(12) { animation-delay: 1.3s; }
+
+/* Animation Keyframes */
+@keyframes fadeInLetterByLetter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
