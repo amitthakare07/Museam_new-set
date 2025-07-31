@@ -88,6 +88,7 @@ const Calendar = () => {
       <div className="legend mt-3 text-muted small">
         <span className="dot"></span> last places available
       </div>
+      
     </div>
   );
 };
@@ -98,7 +99,7 @@ export default function LouvreBooking() {
       <h3 className="text-center mb-5 text-success fw-bold">Louvre Museum Ticket Booking</h3>
 
       <div className="row g-5 align-items-start">
-        {/* LEFT: Calendar and Time */}
+      
         <div className="col-md-7">
           <h4 className="text-dark">Choose a Date</h4>
           <Calendar />
@@ -114,7 +115,7 @@ export default function LouvreBooking() {
           </div>
         </div>
 
-        {/* RIGHT: Form */}
+       
         <div className="col-md-5">
           <h4 className="text-dark">Personal Details</h4>
           <form className="row g-3 mt-3">
@@ -144,7 +145,7 @@ export default function LouvreBooking() {
               <label className="form-label">State</label>
               <select className="form-select">
                 <option defaultValue>Choose...</option>
-                <option>India</option>
+                <option>India.</option>
               </select>
             </div>
             <div className="col-12 text-center mt-4">
@@ -154,9 +155,9 @@ export default function LouvreBooking() {
         </div>
       </div>
 
-      {/* Country Selection Section */}
+      
 <div className="mt-5">
-  <h4 className="text-dark mb-3">Select the Country</h4>
+  <h4 className="text-dark mb-3">Select your Country</h4>
   <div className="country-flags d-flex flex-wrap gap-4">
     <div className="flag-option d-flex align-items-center">
       <img src="https://flagcdn.com/w40/es.png" alt="Spain" className="me-2" />
@@ -186,7 +187,7 @@ export default function LouvreBooking() {
 </div>
 
 
-      {/* ✅ Description Section */}
+      
       <div className="mt-5 p-4 bg-light rounded shadow-sm">
         <h4 className="text-success fw-bold mb-3">Louvre Museum Tickets with Audio Guide</h4>
         <p>Visiting the Louvre Museum should be a must if you're traveling to Paris. This former royal palace turned museum is a historical and architectural gem in itself. Its iconic glass pyramid marks the entrance to a fascinating journey through centuries of art and culture.</p>
