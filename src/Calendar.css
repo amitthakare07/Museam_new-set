@@ -144,3 +144,17 @@ z/* Calendar Container */
   background-color: #e2f0ff;
   transform: translateY(-3px);
 }
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-slide {
+  animation: fadeSlide 0.8s ease forwards;
+}

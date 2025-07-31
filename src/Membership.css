@@ -11,6 +11,17 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-shape {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  z-index: 0;
 }
 
 .membership-hero-overlay {
@@ -23,6 +34,9 @@ body {
   color: #fff;
   text-align: center;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  animation: fadeSlide 1s ease forwards;
 }
 
 .hero-title {
@@ -59,11 +73,38 @@ body {
   color: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s, box-shadow 0.3s ease;
+  position: relative;
+  animation: fadeSlide 1s ease forwards;
 }
 
 .membership-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.membership-card.gold:hover {
+  box-shadow: 0 0 25px 5px rgba(255, 215, 0, 0.6);
+}
+
+.membership-card.emerald:hover {
+  box-shadow: 0 0 25px 5px rgba(0, 255, 170, 0.5);
+}
+
+.membership-card.royal:hover {
+  box-shadow: 0 0 25px 5px rgba(160, 64, 255, 0.6);
+}
+
+.membership-card::before {
+  content: attr(data-badge);
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: gold;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .icon {
@@ -121,6 +162,7 @@ body {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeSlide 1s ease forwards;
 }
 
 .membership-form input,
@@ -141,6 +183,21 @@ body {
   border-color: #00bfa5;
 }
 
+.membership-form select option[value="student"] {
+  background: #f9d423;
+  color: black;
+}
+
+.membership-form select option[value="family"] {
+  background: #43cea2;
+  color: white;
+}
+
+.membership-form select option[value="premium"] {
+  background: #8e2de2;
+  color: white;
+}
+
 .membership-form button {
   width: 100%;
   padding: 14px;
@@ -157,7 +214,19 @@ body {
   background-color: #00796b;
 }
 
-/* Responsive Design */
+/* Animation */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2rem;

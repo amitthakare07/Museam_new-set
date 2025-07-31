@@ -10,16 +10,17 @@ function CustomNavbar() {
         {/* Left: Logo + Brand */}
         <div className="louvre-brand">
           <img src="/images.png" alt="Louvre Logo" className="louvre-logo" />
-          <span className="louvre-text"><Nav.Link as={NavLink} to="/">Louvre</Nav.Link></span>
+          <span className="louvre-text"><Nav.Link as={NavLink} to="/">The Times Gallery</Nav.Link></span>
         </div>
 
         {/* Center: Nav Links only */}
         <Nav className="louvre-center-nav">
           <Nav.Link as={NavLink} to="/a">Explore</Nav.Link>
           <Nav.Link as={NavLink} to="/aaa">Booking</Nav.Link>
-          <Nav.Link as={NavLink} to="/aaaa">Login</Nav.Link>
+      
           <Nav.Link as={NavLink} to="/aa">Contact</Nav.Link>
           <Nav.Link as={NavLink} to="/aaaaa">Membership</Nav.Link>
+          <Nav.Link as={NavLink} to="/aaaa">Login</Nav.Link>
         </Nav>
 
         {/* Right: Buttons */}
