@@ -23,6 +23,8 @@ import Membership from './Membership';
 import Info from './Info';
 import OnlineTicketingService from './OnlineTicketingService';
 import Group from './Group';
+import Explore from './Explore';
+import ExploreDetail from './ExploreDetail';
 
 
 function App() {
@@ -47,6 +49,11 @@ function App() {
         <Route path="/Info" element={<Info/>} />
         <Route path="/OnlineTicketingService" element={< OnlineTicketingService/>} />
         <Route path="/Group" element={< Group/>} />
+         <Route path="/explore-detail/:id" element={<ExploreDetail />} />
+        
+
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/explore/:id" element={<ExploreDetail />} />
 
       </Routes>
       <Footer/>

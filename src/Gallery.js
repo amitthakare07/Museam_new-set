@@ -133,7 +133,7 @@ function Gallery() {
         <div className="gallery-hero-overlay">
           <h1 className="gallery-hero-title">Discover the Treasures of Civilization</h1>
           <p className="gallery-hero-subtitle">Explore timeless art, history, and cultural heritage at the Louvre</p>
-          <Link to="/Music" className="gallery-hero-button">Start Exploring</Link>
+          <Link to="/explore" className="gallery-hero-button">Start Exploring</Link>
         </div>
       </div>
 
