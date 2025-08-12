@@ -1,4 +1,4 @@
-z/* Calendar Container */
+/* zCalendar Container
 .custom-calendar-container {
   background: #fff;
   border-radius: 1rem;
@@ -155,4 +155,4 @@ z/* Calendar Container */
 
 .fade-slide {
   animation: fadeSlide 0.8s ease forwards;
-}
+} 

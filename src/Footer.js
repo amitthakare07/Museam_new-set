@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="footer mt-5">
+    <footer className="footer mt-5>">
       <div className="container py-5">
         <div className="row align-items-center">
           

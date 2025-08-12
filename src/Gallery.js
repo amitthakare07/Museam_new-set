@@ -22,7 +22,6 @@ import girls from './girl.jpg';
 import boys from './boy.jpg';
 import lions from './lion.jpg';
 import mans from './man.jpg';
-import mona from './monalisa.jpg';
 
 const collectionItems = [
   {
@@ -128,9 +127,13 @@ function Gallery() {
   return (
     <>
       <div className="gallery-hero-container fade-slide">
-        <img src={mona} alt="Background" className="gallery-background-image" />
-        <div className="gallery-search-bar">
-          <input type="text" placeholder="Search The Louvre Collection" className="gallery-search-input" />
+        <video className="hero-video" autoPlay muted loop playsInline>
+          <source src="/228782.mp4" type="video/mp4" />
+        </video>
+        <div className="gallery-hero-overlay">
+          <h1 className="gallery-hero-title">Discover the Treasures of Civilization</h1>
+          <p className="gallery-hero-subtitle">Explore timeless art, history, and cultural heritage at the Louvre</p>
+          <Link to="/explore" className="gallery-hero-button">Start Exploring</Link>
         </div>
       </div>
 
@@ -156,7 +159,7 @@ function Gallery() {
       </div>
 
       <p className="gallery-album-heading">Themed Albums</p>
-      <div className="gallery-album-grid">
+      <div className="gallery-album-grid" style={{marginBottom:'50px'}}>
         <div className="gallery-album-card">
           <p className="gallery-album-text">ACQUISITION MADE IN 2023<br /><hr />THE LATEST ADDITION</p>
           <Link to="/girlspage"><img src={girls} alt="2023" /></Link>

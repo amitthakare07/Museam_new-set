@@ -3,8 +3,7 @@
 .gold-login-page {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
-background-color: #ffffff;
-
+  background-image: url('https://images.unsplash.com/photo-1581349482326-4a2e7bd9cb58?auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,7 +13,6 @@ background-color: #ffffff;
   align-items: center;
   overflow: hidden;
 }
-
 
 .gold-overlay {
   position: absolute;
@@ -33,7 +31,7 @@ background-color: #ffffff;
 }
 
 .gold-login-card {
-  background: rgba(31, 31, 31, 0.8);
+  background: rgba(31, 31, 31, 0.85);
   backdrop-filter: blur(25px);
   border: 2px solid rgba(255, 215, 0, 0.6);
   border-radius: 20px;
@@ -41,6 +39,7 @@ background-color: #ffffff;
   box-shadow: 0 0 40px rgba(255, 215, 0, 0.25);
   color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeSlide 1s ease forwards;
 }
 
 .gold-login-card:hover {
@@ -51,12 +50,14 @@ background-color: #ffffff;
 .gold-login-card h2 {
   color: #ffd700;
   font-weight: 700;
+  font-size: 32px;
   text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
 }
 
 .gold-login-card label {
   color: #ddd;
   font-weight: 500;
+  font-size: 15px;
 }
 
 .gold-login-card .form-control {
@@ -77,17 +78,37 @@ background-color: #ffffff;
 .gold-btn {
   background: linear-gradient(to right, #ffdf00, #e6c200);
   color: #000;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 17px;
   border-radius: 12px;
   padding: 12px;
   border: none;
   box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0.3), transparent);
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
 }
 
 .gold-btn:hover {
   background: #f5ce00;
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+  transform: scale(1.02);
 }
 
 .gold-login-card a {
@@ -98,6 +119,7 @@ background-color: #ffffff;
 .gold-login-card a:hover {
   text-decoration: underline;
 }
+
 @keyframes fadeSlide {
   0% {
     opacity: 0;
