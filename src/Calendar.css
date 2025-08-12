@@ -24,14 +24,14 @@ z/* Calendar Container */
   background-color: #e2e2e2;
 }
 
-/* Weekdays */
+
 .custom-calendar-weekdays div {
   width: 40px;
   text-align: center;
   font-weight: 600;
 }
 
-/* Days Grid */
+
 .custom-calendar-grid {
   gap: 8px;
 }
@@ -49,19 +49,17 @@ z/* Calendar Container */
   transition: background 0.2s, color 0.2s;
 }
 
-/* Hover effect */
 .custom-calendar-day:hover {
   background-color: #ddd;
 }
 
-/* Disabled dates */
+
 .custom-calendar-day.disabled {
   background-color: #eee;
   color: #aaa;
   cursor: not-allowed;
 }
 
-/* Last available slots */
 .custom-calendar-day.last-available {
   border: 2px solid #28a745;
   color: #28a745;

@@ -6,10 +6,9 @@ const months = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const Calendar = () => {
-  const [currentMonth, setCurrentMonth] = useState(6); // July
+const Calendar = ({ selectedDate, setSelectedDate }) => {
+  const [currentMonth, setCurrentMonth] = useState(6);
   const [currentYear, setCurrentYear] = useState(2025);
-  const [selectedDate, setSelectedDate] = useState(null);
 
   const disabledDates = [13, 14, 15, 16, 17, 21, 22, 27, 29];
   const lastAvailable = [18, 28];
@@ -88,106 +87,84 @@ const Calendar = () => {
       <div className="legend mt-3 text-muted small">
         <span className="dot"></span> last places available
       </div>
-      
     </div>
   );
 };
 
 export default function LouvreBooking() {
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState('Spain');
+  const countryCityMap = {
+    Spain: 'Madrid',
+    'United Kingdom': 'London',
+    France: 'Paris',
+    Italy: 'Rome',
+    Germany: 'Berlin',
+    China: 'Beijing'
+  };
+
   return (
     <div className="container my-5 custom-booking">
       <h3 className="text-center mb-5 text-success fw-bold">Louvre Museum Ticket Booking</h3>
 
-      <div className="row g-5 align-items-start">
-      
-        <div className="col-md-7">
-          <h4 className="text-dark">Choose a Date</h4>
-          <Calendar />
+      <div className="card p-4 shadow-lg">
+        <div className="row g-4">
+          <div className="col-md-6">
+            <h5 className="text-dark">Choose a Date</h5>
+            <Calendar selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
 
-          <h4 className="mt-5 text-success fw-bold">Select a Time</h4>
-          <p className="text-muted">Select a date, then select a time</p>
-          <div className="mb-4">
-            {["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"].map((time, i) => (
-              <button key={i} className="btn btn-outline-dark m-2 rounded-pill px-4">
-                {time}
-              </button>
-            ))}
+            <h5 className="mt-4 text-success fw-bold">Select a Time</h5>
+            <div className="mb-3">
+              {["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"].map((time, i) => (
+                <button key={i} className="btn btn-outline-dark m-2 rounded-pill px-4">
+                  {time}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="col-md-6">
+            <h5 className="text-dark">Personal Details</h5>
+            <form className="row g-3">
+              <div className="col-md-6">
+                <input type="text" className="form-control" placeholder="First name" />
+              </div>
+              <div className="col-md-6">
+                <input type="text" className="form-control" placeholder="Last name" />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label mt-3">Email</label>
+                <input type="email" className="form-control" />
+              </div>
+              <div className="col-md-12">
+                <label className="form-label">Password</label>
+                <input type="password" className="form-control" />
+              </div>
+              <div className="col-12">
+                <label className="form-label">Address</label>
+                <input type="text" className="form-control" placeholder="1234 Main St" />
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">Country</label>
+                <select className="form-select" value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
+                  {Object.keys(countryCityMap).map((country, i) => (
+                    <option key={i}>{country}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">City</label>
+                <input type="text" className="form-control" value={countryCityMap[selectedCountry]} readOnly />
+              </div>
+            </form>
           </div>
         </div>
 
-       
-        <div className="col-md-5">
-          <h4 className="text-dark">Personal Details</h4>
-          <form className="row g-3 mt-3">
-            <div className="col-md-6">
-              <input type="text" className="form-control" placeholder="First name" />
-            </div>
-            <div className="col-md-6">
-              <input type="text" className="form-control" placeholder="Last name" />
-            </div>
-            <div className="col-md-12">
-              <label className="form-label mt-3">Email</label>
-              <input type="email" className="form-control" />
-            </div>
-            <div className="col-md-12">
-              <label className="form-label">Password</label>
-              <input type="password" className="form-control" />
-            </div>
-            <div className="col-12">
-              <label className="form-label">Address</label>
-              <input type="text" className="form-control" placeholder="1234 Main St" />
-            </div>
-            <div className="col-md-6">
-              <label className="form-label">City</label>
-              <input type="text" className="form-control" />
-            </div>
-            <div className="col-md-6">
-              <label className="form-label">State</label>
-              <select className="form-select">
-                <option defaultValue>Choose...</option>
-                <option>India.</option>
-              </select>
-            </div>
-            <div className="col-12 text-center mt-4">
-              <button type="submit" className="btn btn-success px-5 py-2 rounded-pill shadow">Book Now</button>
-            </div>
-          </form>
+        <div className="text-center mt-4">
+          <button type="submit" className="btn btn-success px-5 py-2 rounded-pill shadow">Book Now</button>
         </div>
       </div>
 
-      
-<div className="mt-5">
-  <h4 className="text-dark mb-3">Select your Country</h4>
-  <div className="country-flags d-flex flex-wrap gap-4">
-    <div className="flag-option d-flex align-items-center">
-      <img src="https://flagcdn.com/w40/es.png" alt="Spain" className="me-2" />
-      <span>Spain</span>
-    </div>
-    <div className="flag-option d-flex align-items-center">
-      <img src="https://flagcdn.com/w40/gb.png" alt="UK" className="me-2" />
-      <span>United Kingdom</span>
-    </div>
-    <div className="flag-option d-flex align-items-center">
-      <img src="https://flagcdn.com/w40/fr.png" alt="France" className="me-2" />
-      <span>France</span>
-    </div>
-    <div className="flag-option d-flex align-items-center">
-      <img src="https://flagcdn.com/w40/it.png" alt="Italy" className="me-2" />
-      <span>Italy</span>
-    </div>
-    <div className="flag-option d-flex align-items-center">
-      <img src="https://flagcdn.com/w40/de.png" alt="Germany" className="me-2" />
-      <span>Germany</span>
-    </div>
-    <div className="flag-option d-flex align-items-center">
-      <img src="https://flagcdn.com/w40/cn.png" alt="China" className="me-2" />
-      <span>China</span>
-    </div>
-  </div>
-</div>
-
-
-      
       <div className="mt-5 p-4 bg-light rounded shadow-sm">
         <h4 className="text-success fw-bold mb-3">Louvre Museum Tickets with Audio Guide</h4>
         <p>Visiting the Louvre Museum should be a must if you're traveling to Paris. This former royal palace turned museum is a historical and architectural gem in itself. Its iconic glass pyramid marks the entrance to a fascinating journey through centuries of art and culture.</p>
