@@ -1,58 +1,68 @@
 .footer {
-  background-color: #000000;
-  color: #ffffff;
-  border-top: 2px solid #222;
+  background-color: #111;
+  color: #eee;
+  padding: 30px 0 15px;   /* height kam ki */
   font-family: 'Georgia', serif;
-  padding: 40px 0;
 }
 
 .footer-logo {
-  color: #ffffff;
+  font-size: 1.4rem;       /* thoda chhota */
   font-weight: bold;
-  font-size: 1.6rem;
-  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.footer-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
 .footer-text {
-  margin: 4px 0;
-  font-size: 0.95rem;
-  color: #dddddd;
+  font-size: 0.85rem;
+  color: #bbb;
+  margin: 3px 0;
 }
 
-.footer-text a {
-  color: #ffffff;
+.footer-links li {
+  margin-bottom: 4px;
+}
+
+.footer-links a {
+  color: #bbb;
   text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
 }
 
-.footer-text a:hover {
+.footer-links a:hover {
   color: #f5c518;
 }
 
-.footer-copy {
-  font-size: 0.8rem;
-  color: #aaaaaa;
-}
-
-.footer-connect {
-  color: #ffffff;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-}
-
 .footer-social a {
-  font-size: 1.6rem;
-  color: #ffffff;
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 1.2rem;       /* icons ka size bhi compact */
+  color: #bbb;
+  margin-right: 12px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-icon:hover {
-  transform: scale(1.2);
+.footer-social a:hover {
+  color: #f5c518;
+  transform: scale(1.15);
 }
 
-.footer-icon.whatsapp:hover {
-  color: #25D366;
+.footer-copy {
+  font-size: 0.75rem;     /* chhota aur neat */
+  color: #888;
+  margin-top: 10px;
 }
 
-.footer-icon.instagram:hover {
-  color: #E1306C;
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer-social {
+    margin-top: 8px;
+  }
 }

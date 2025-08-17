@@ -54,7 +54,7 @@ function Login() {
             <button type="submit" className="btn gold-btn w-100 mb-3">Login</button>
             <div className="text-center">
               <small>Forgot password? <a href="#">Click here</a></small><br />
-              <small>New user? <a href="#">Create account</a></small>
+              <small>New user? <a href="signup">Create account</a></small>
             </div>
           </form>
         </div>

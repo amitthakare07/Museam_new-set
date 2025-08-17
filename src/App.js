@@ -25,7 +25,7 @@ import OnlineTicketingService from './OnlineTicketingService';
 import Group from './Group';
 import Explore from './Explore';
 import ExploreDetail from './ExploreDetail';
-
+import Signup from './Singup';
 
 function App() {
   return (
@@ -50,7 +50,7 @@ function App() {
         <Route path="/OnlineTicketingService" element={< OnlineTicketingService/>} />
         <Route path="/Group" element={< Group/>} />
          <Route path="/explore-detail/:id" element={<ExploreDetail />} />
-        
+        <Route path="/signup" element={<Signup />} />
 
         <Route path="/explore" element={<Explore />} />
         <Route path="/explore/:id" element={<ExploreDetail />} />
