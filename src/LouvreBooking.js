@@ -105,7 +105,7 @@ export default function LouvreBooking() {
 
   return (
     <div className="container my-5 custom-booking">
-      <h3 className="text-center mb-5 text-success fw-bold">Louvre Museum Ticket Booking</h3>
+      <h3 className="text-center mb-5 text-success fw-bold">Time gallery Ticket Booking</h3>
 
       <div className="card p-4 shadow-lg">
         <div className="row g-4">
@@ -166,8 +166,8 @@ export default function LouvreBooking() {
       </div>
 
       <div className="mt-5 p-4 bg-light rounded shadow-sm">
-        <h4 className="text-success fw-bold mb-3">Louvre Museum Tickets with Audio Guide</h4>
-        <p>Visiting the Louvre Museum should be a must if you're traveling to Paris. This former royal palace turned museum is a historical and architectural gem in itself. Its iconic glass pyramid marks the entrance to a fascinating journey through centuries of art and culture.</p>
+        <h4 className="text-success fw-bold mb-3">Time gallery Tickets with Audio Guide</h4>
+        <p>Visiting the Time gallery should be a must if you're traveling to Paris. This former royal palace turned museum is a historical and architectural gem in itself. Its iconic glass pyramid marks the entrance to a fascinating journey through centuries of art and culture.</p>
         <p>The Louvre Museum in Paris is home to some of the world's most famous artworks. With our audio guide, you can explore its majestic halls and learn the history behind its most valuable treasures, from the enigmatic Mona Lisa to the imposing Winged Victory of Samothrace.</p>
         <p>With our Louvre Museum tickets with an audio guide, you’ll uncover the secrets of its collections, learn about the civilizations that left their mark on these masterpieces, and understand why this is the most visited museum in the world.</p>
         <p>But the Louvre is much more than just its collection. Did you know that before becoming a museum, it was a medieval fortress? Or that its galleries house over 35,000 pieces? Discover these and other fascinating facts with our Louvre tickets with an audio guide.</p>
@@ -175,7 +175,7 @@ export default function LouvreBooking() {
 
         <h5 className="mt-4">Book your Louvre Museum tickets:</h5>
         <ul>
-          <li>Entry tickets to the Louvre Museum</li>
+          <li>Entry tickets to the time gallery</li>
           <li>Audio guide in the selected language</li>
           <li>Audio guide of Notre Dame</li>
           <li>Audio guide of the city of Paris</li>

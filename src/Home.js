@@ -58,7 +58,7 @@ function Home() {
         <div className="hero-content text-white text-center fade-slide">
           <h1 className="display-4 fw-bold">Escape with the <br /> time gallery</h1>
           <div className="info-box mt-4 p-4 bg-dark bg-opacity-75 rounded">
-            <p className="mb-1"><strong>Welcome to the Louvre</strong><br />Open today</p>
+            <p className="mb-1"><strong>Welcome to the time gallery</strong><br />Open today</p>
             <p className="open-time text-warning fw-semibold">9:00 AM → 6:00 PM</p>
             <div className="d-flex justify-content-center gap-3 flex-wrap mt-3">
               <button className="btn-glow">🎫 Book a ticket</button>

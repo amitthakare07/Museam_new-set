@@ -132,14 +132,14 @@ function Gallery() {
         </video>
         <div className="gallery-hero-overlay">
           <h1 className="gallery-hero-title">Discover the Treasures of Civilization</h1>
-          <p className="gallery-hero-subtitle">Explore timeless art, history, and cultural heritage at the Louvre</p>
+          <p className="gallery-hero-subtitle">Explore timeless art, history, and cultural heritage at the time gallery</p>
           <Link to="/explore" className="gallery-hero-button">Start Exploring</Link>
         </div>
       </div>
 
       <div className="gallery-description">
         <p>
-          The Collections database consists of entries for more than 500,000 works in the Musée du Louvre and Musée National Eugène-Delacroix. Updated on a daily basis, it is the result of the continuous research and documentation efforts carried out by teams of experts from both museums.
+          The Collections database consists of entries for more than 500,000 works in the Musée du time gallery  National Eugène-Delacroix. Updated on a daily basis, it is the result of the continuous research and documentation efforts carried out by teams of experts from both museums.
         </p>
         <Link to="/Music">See more</Link>
       </div>
