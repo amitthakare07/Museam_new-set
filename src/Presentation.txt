@@ -1,0 +1,61 @@
+* Slide 5:- Global Privacy Laws & Penalties
+
+This slide highlights the strict penalties for breaking data privacy rules.
+It is listing the specific maximum fines from different regions:
+
+Do you know about DPDP Act?
+It is Digital Personal Data Protection Act, in India’s data privacy law ₹250 Cr fines for data breaches.
+It was passed in August 2023 to protect people’s personal data and regulate how organizations use it.
+
+Europe's GDPR: €20M or 4% of global revenue.(General data Protection Regulation)
+US's HIPAA: an annual cap of $2.13M.(Health Insurance Portability and Accountability Act)
+California's CCPA/CPRA: $7.5K per violation.
+CCPA → California Consumer Privacy Act
+CPRA → California Privacy Rights Act
+
+Effective PII masking can reduce breach damage make audits easier and improve company reputation 
+
+* Slide 6: Limitations of Existing Systems
+
+now lets expands on the problems mentioned earlier by detailing the specific limitations of current PII masking systems.
+
+1.Manual & Error-Prone Processes: Current methods rely on manual review or simple searches, which often miss PII in large    datasets or unstructured documents like PDFs.
+
+2.Limited Detection Capabilities: Many systems are restricted to fixed data formats and cannot identify context-based PII hidden within text.
+
+3.Lack of Automation & Customization: Older systems are inefficient because they lack automation, multi-format support, and customizable masking options.
+
+4.Increased Risk Exposure: These limitations lead to a higher risk of data breaches, non-compliance with laws, and a significant loss of customer trust.
+
+*Slide 11: System Module
+1.Input Handling Module
+To handle different types of input.
+It can take text files, PDFs, or direct manual text input.
+Converts them into a format the system can read.
+
+* Slide 14: Implementation
+
+Let's dive deeper into the two different interfaces used.
+
+1.React.js Frontend: A modern, responsive user interface for the main web application. Its features include file/text upload, flexible masking method selection, real-time preview, and API calls to the backend. It's built with React.js, Tailwind CSS/Material UI, and Fetch API/Axios.
+
+2.Streamlit Interface: An internal interface for testing and quick demonstrations. Its features include intuitive sidebar controls, instant result display, and easy debugging. It's built with Streamlit and libraries like PyPDF2/PyMuPDF for file reading.
+
+
+* Slide 18: Key Differentiators
+Our smart PII Masking solution delivers unique capabilities and strong performance to meet key privacy and operational needs.    
+
+1.High Precision & Recall: Achieves exceptional accuracy with less than 1% false positives and false negatives.
+
+2. Multi-language & Custom Entity Support: Can handle diverse languages and allows for the definition of custom PII entities.
+
+
+3. Real-time Streaming Throughput: Can process large volumes of data at high speeds.
+
+4. In-flight & At-rest Detection: Secures PII whether it's in transit or stored.
+
+5. Explainable Detections & Audit Trail: Provides transparency into how PII is identified and masked, along with a detailed            
+   audit trail.
+
+6. Seamless Cloud & On-prem Deployment: Offers flexible deployment options for cloud or on-premise environments.
+

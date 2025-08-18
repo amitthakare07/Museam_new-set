@@ -140,7 +140,7 @@ body {
 }
 
 /* Submit Form */
-.submit-container {
+/* .submit-container {
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;
@@ -185,9 +185,48 @@ body {
 
 .submit-container button:hover {
   background-color: #0097a7;
-}
+} */
 
 /* FAQ & Themes Section */
+
+
+
+.contact-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #45a049;
+}
 .container {
   padding: 20px;
 }

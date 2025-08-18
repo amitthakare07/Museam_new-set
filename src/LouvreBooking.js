@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './Calendar.css';
+ import React, { useState } from 'react';
+ import './Calendar.css';
+ import axios from 'axios';
 
 const months = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -69,6 +70,68 @@ const Calendar = () => {
     setSelectedDate(null);
   };
 
+
+
+
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+
+
+  // Mam given code📄
+  
+  const fetchUserdata = async () =>{
+    try {
+        const response = await axios.post('http://localhost:8000/booking');
+        console.log('test',response);
+        const userData = response.data.userData;
+
+        setFirstName(userData.firstname || '');
+        setLastName(userData.lastname || '');
+        setEmail(userData.email || '');
+        setAddress(userData.address || '');
+        setCity(userData.city || '');
+        setState(userData.state || '');
+    }
+    catch (err) {
+        console.error('Error fetching user data:', err);
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  try {
+    const response = await axios.post("http://localhost:8000/booking", {
+      firstname,
+      lastname,
+      email,
+      address,
+      city,
+      state
+    });
+
+    alert(response.data.message || "Message sent successfully");
+    
+    
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setAddress('');
+    setCity('');
+    setState('');
+    
+  } catch (error) {
+    console.error("Error sending message:", error);
+    alert("Failed to send message");
+  }
+};
+
+
+
+
   return (
     <div className="custom-calendar-container text-center fade-slide">
       <div className="custom-calendar-nav d-flex justify-content-between align-items-center px-5">
@@ -115,23 +178,25 @@ export default function LouvreBooking() {
         </div>
 
         {/* RIGHT: Form */}
-        <div className="col-md-5">
+        <div className="col-md-5" >
           <h4 className="text-dark">Personal Details</h4>
           <form className="row g-3 mt-3">
             <div className="col-md-6">
-              <input type="text" className="form-control" placeholder="First name" />
+              <label className="form-label mt-3">First Name</label>
+              <input type="text" className="form-control" />
             </div>
             <div className="col-md-6">
-              <input type="text" className="form-control" placeholder="Last name" />
+              <label className="form-label mt-3">Last Name</label>
+              <input type="text" className="form-control" />
             </div>
             <div className="col-md-12">
               <label className="form-label mt-3">Email</label>
               <input type="email" className="form-control" />
             </div>
-            <div className="col-md-12">
+            {/* <div className="col-md-12">
               <label className="form-label">Password</label>
               <input type="password" className="form-control" />
-            </div>
+            </div> */}
             <div className="col-12">
               <label className="form-label">Address</label>
               <input type="text" className="form-control" placeholder="1234 Main St" />
@@ -142,10 +207,7 @@ export default function LouvreBooking() {
             </div>
             <div className="col-md-6">
               <label className="form-label">State</label>
-              <select className="form-select">
-                <option defaultValue>Choose...</option>
-                <option>India</option>
-              </select>
+              <input type="text" className="form-control" />
             </div>
             <div className="col-12 text-center mt-4">
               <button type="submit" className="btn btn-success px-5 py-2 rounded-pill shadow">Book Now</button>
@@ -215,3 +277,4 @@ export default function LouvreBooking() {
     </div>
   );
 }
+
