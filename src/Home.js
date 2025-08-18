@@ -1,53 +1,77 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 function Home() {
-  const highlights = [
-    {
-      title: "MAMLUKS",
-      image: "/202201-3_baibars-mamluk-sultan-of-egypt.jpg",
-      tag: "Exhibition",
-      description: "Golden age of the Islamic Near East through the Mamluk sultanate.",
-      date: "30 April – 28 July 2025"
-    },
-    {
-      title: "LOUVRE COUTURE",
-      image: "/1142257-louvre-couture-l-exposition-mode-evenement-la-premiere-de-l-histoire-du-musee-du-louvre-img-9122-jpg-2.jpg",
-      tag: "Fashion",
-      description: "Decorative arts and modern fashion design.",
-      date: "24 Jan – 21 July 2025"
-    },
-    {
-      title: "CHINA: THIERS ADOLPHE",
-      image: "/jcr_content.jpg",
-      tag: "Culture",
-      description: "Masterpieces from the Qing dynasty scrolls.",
-      date: "14 May – 25 Aug 2025"
-    },
-    {
-      title: "THE MET AU LOUVRE",
-      image: "/images.jpg",
-      tag: "Dialogue",
-      description: "Near Eastern Antiquities in Dialogue.",
-      date: "29 Feb – 28 Sep 2025"
-    },
-    {
-      title: "WOMEN IN RENAISSANCE ART",
-      image: "/dd287e2fd247a075b1cb6a5f96c49efe--italian-renaissance-art-renaissance-artists.jpg",
-      tag: "Art & Gender",
-      description: "Exploring the roles and representations of women in Renaissance paintings.",
-      date: "12 Mar – 30 Sep 2025"
-    },
-    {
-      title: "MAYA: SACRED COSMOS",
-      image: "/mayan.mythologyworldwide.com-The-Popol-Vuh-The-Mayas-Epic-Tale-of-Life-and-the-Cosmos.webp",
-      tag: "Ancient Civilizations",
-      description: "Rituals, astronomy, and mythology in Maya culture and artifacts.",
-      date: "5 Apr – 20 Oct 2025"
-    }
-  ];
+  // const highlights = [
+  //   {
+  //     title: "MAMLUKS",
+  //     image: "/202201-3_baibars-mamluk-sultan-of-egypt.jpg",
+  //     tag: "Exhibition",
+  //     description: "Golden age of the Islamic Near East through the Mamluk sultanate.",
+  //     date: "30 April – 28 July 2025"
+  //   },
+  //   {
+  //     title: "LOUVRE COUTURE",
+  //     image: "/1142257-louvre-couture-l-exposition-mode-evenement-la-premiere-de-l-histoire-du-musee-du-louvre-img-9122-jpg-2.jpg",
+  //     tag: "Fashion",
+  //     description: "Decorative arts and modern fashion design.",
+  //     date: "24 Jan – 21 July 2025"
+  //   },
+  //   {
+  //     title: "CHINA: THIERS ADOLPHE",
+  //     image: "/jcr_content.jpg",
+  //     tag: "Culture",
+  //     description: "Masterpieces from the Qing dynasty scrolls.",
+  //     date: "14 May – 25 Aug 2025"
+  //   },
+  //   {
+  //     title: "THE MET AU LOUVRE",
+  //     image: "/images.jpg",
+  //     tag: "Dialogue",
+  //     description: "Near Eastern Antiquities in Dialogue.",
+  //     date: "29 Feb – 28 Sep 2025"
+  //   },
+  //   {
+  //     title: "WOMEN IN RENAISSANCE ART",
+  //     image: "/dd287e2fd247a075b1cb6a5f96c49efe--italian-renaissance-art-renaissance-artists.jpg",
+  //     tag: "Art & Gender",
+  //     description: "Exploring the roles and representations of women in Renaissance paintings.",
+  //     date: "12 Mar – 30 Sep 2025"
+  //   },
+  //   {
+  //     title: "MAYA: SACRED COSMOS",
+  //     image: "/mayan.mythologyworldwide.com-The-Popol-Vuh-The-Mayas-Epic-Tale-of-Life-and-the-Cosmos.webp",
+  //     tag: "Ancient Civilizations",
+  //     description: "Rituals, astronomy, and mythology in Maya culture and artifacts.",
+  //     date: "5 Apr – 20 Oct 2025"
+  //   }
+  // ];
+  
 
+  const navigate = useNavigate();
+  const [highlight, setHighlight] = useState([]);
+
+  useEffect(() => {
+    fetchMessages();
+  }, []);
+
+
+
+const fetchMessages = () => {
+  axios
+    .get("http://localhost:8000/highlightfindall") // ✅ your API endpoint
+    .then((res) => {
+      setHighlight(res.data.data);
+    })
+    .catch((err) => {
+      console.error("Error fetching messages:", err);
+      setHighlight([]);
+    });
+};
   return (
     <div className="home-page">
       {/* Hero Section */}
@@ -72,7 +96,7 @@ function Home() {
       <section className="louvre-highlights container my-5">
         <h2 className="louvre-section-title text-center mb-5">✨ Highlights</h2>
         <div className="row g-4">
-          {highlights.map((item, index) => (
+          {highlight.map((high,index) => (
             <div key={index} className="col-md-6 col-lg-4">
               <div
                 className="louvre-highlight-card"
@@ -94,13 +118,13 @@ function Home() {
               >
                 <div className="louvre-highlight-inner">
                   <div className="louvre-highlight-img-wrapper">
-                    <img src={item.image} alt={item.title} className="highlight-img" />
-                    <span className="louvre-tag">{item.tag}</span>
+                    <img src={`http://localhost:8000/${high.image}`} variant="top" style={{ height: "200px", objectFit: "cover", backgroundColor: '#313231ff' }} />
+                    <span className="louvre-tag">{high.heading}</span>
                   </div>
                   <div className="louvre-card-body">
-                    <h5 className="louvre-card-title">{item.title}</h5>
-                    <p className="louvre-card-text">{item.description}</p>
-                    <p className="louvre-card-date">{item.date}</p>
+                    <h5 className="louvre-card-title">{high.title}</h5>
+                    <p className="louvre-card-text">{high.text}</p>
+                    <p className="louvre-card-date">{high.date}</p>
                   </div>
                 </div>
               </div>
