@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
 import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5000/register', {
-        email,
-        password
-      });
-      console.log('Response:', response.data);
-      alert('Login/Register Successful');
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Login/Register Failed');
+
+    if (!email || !password) {
+      alert("Please enter both email and password");
+      return;
     }
+
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      alert('🎉 Login Successful! Welcome back.');
+      navigate('/');
+    }, 1000); // simulate delay for effect
   };
 
   return (
@@ -51,10 +54,12 @@ function Login() {
                 required
               />
             </div>
-            <button type="submit" className="btn gold-btn w-100 mb-3">Login</button>
+            <button type="submit" className="btn gold-btn w-100 mb-3" disabled={loading}>
+              {loading ? 'Processing...' : 'Login'}
+            </button>
             <div className="text-center">
               <small>Forgot password? <a href="#">Click here</a></small><br />
-              <small>New user? <a href="signup">Create account</a></small>
+              <small>New user? <a href="/signup">Create account</a></small>
             </div>
           </form>
         </div>

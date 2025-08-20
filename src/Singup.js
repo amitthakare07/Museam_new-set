@@ -1,31 +1,43 @@
 import React, { useState } from 'react';
-import './Login.css'; // same CSS reuse hoga
+import './Login.css'; // Reusing same CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
+
+    setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/signup', {
+      const response = await axios.post('http://localhost:000/signup', {
         name,
         email,
         password,
       });
+
       console.log('Response:', response.data);
-      alert('Signup Successful');
+      alert(response.data.message || 'Signup Successful');
+
+      // Optionally redirect to login page after signup
+      navigate('/login');
     } catch (error) {
       console.error('Error:', error);
-      alert('Signup Failed');
+      alert(error.response?.data?.message || 'Signup Failed');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -80,8 +92,8 @@ function Signup() {
                 required
               />
             </div>
-            <button type="submit" className="btn gold-btn w-100 mb-3">
-              Sign Up
+            <button type="submit" className="btn gold-btn w-100 mb-3" disabled={loading}>
+              {loading ? 'Processing...' : 'Sign Up'}
             </button>
             <div className="text-center">
               <small>Already have an account? <a href="/login">Login</a></small>
