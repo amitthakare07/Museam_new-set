@@ -92,7 +92,7 @@ function Membership() {
         </div>
       </div>
 
-      <div className="container-fluid" style={{backgroundColor: "#F8F8F8", width: "2600px"}}>
+      <div className="container" style={{backgroundColor: "#F8F8F8", width: "2600px"}}>
       <div className="membership-form-section fade-slide" style={{ width: "600px", marginTop: "0px" ,marginLeft: "350px", paddingTop: "10px", borderRadius: "15px", backgroundColor: "white"}}>
         <h2 className="section-heading">Join Us Today</h2>
         <Form onSubmit={handleSubmit} >
