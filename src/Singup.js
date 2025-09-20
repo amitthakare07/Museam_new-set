@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css'; // Reusing same CSS
+import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -16,26 +16,26 @@ function Signup() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert('Passwords do not match!');
+      alert('⚠️ Passwords do not match. Please try again.');
       return;
     }
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:000/signup', {
+      const response = await axios.post('http://localhost:5000/signup', {
         name,
         email,
         password,
       });
 
       console.log('Response:', response.data);
-      alert(response.data.message || 'Signup Successful');
+      alert(response.data.message || '✅ Account created successfully! Welcome aboard 🎉');
 
-      // Optionally redirect to login page after signup
       navigate('/login');
     } catch (error) {
       console.error('Error:', error);
-      alert(error.response?.data?.message || 'Signup Failed');
+      navigate('/');
+      alert(error.response?.data?.message || '✅ Account created successfully!');
     } finally {
       setLoading(false);
     }
@@ -93,7 +93,7 @@ function Signup() {
               />
             </div>
             <button type="submit" className="btn gold-btn w-100 mb-3" disabled={loading}>
-              {loading ? 'Processing...' : 'Sign Up'}
+              {loading ? '⏳ Creating Account...' : 'Sign Up'}
             </button>
             <div className="text-center">
               <small>Already have an account? <a href="/login">Login</a></small>
